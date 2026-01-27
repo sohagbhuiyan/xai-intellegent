@@ -1,9 +1,8 @@
-p align="center">
+
   <h1 align="center">XAI Intelligence Workspace</h1>
   <p align="center">
     Data → Intelligence · Motion-Driven Interactive Experience
   </p>
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-14%2B-black" />
