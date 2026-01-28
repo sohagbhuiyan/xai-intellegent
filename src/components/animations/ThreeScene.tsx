@@ -289,13 +289,13 @@ export default function ThreeScene() {
       const elapsedTime = clock.getElapsedTime();
 
       if (sphereRef.current) {
-        // Smooth rotation interpolation (lerp)
+        // Smooth rotation interpolation (lerp) - increased speed for visibility
         if (!isDraggingRef.current) {
-          targetRotationRef.current.y += 0.001;
+          targetRotationRef.current.y += 0.005;
         }
 
         // Apply smooth damping to rotation
-        const damping = 0.05;
+        const damping = 0.1;
         currentRotationRef.current.x +=
           (targetRotationRef.current.x - currentRotationRef.current.x) * damping;
         currentRotationRef.current.y +=
@@ -411,7 +411,7 @@ export default function ThreeScene() {
   }, []);
 
   return (
-    <div className="relative w-full h-150">
+    <div className="relative w-full h-[600px]">
       <div ref={containerRef} className="w-full h-full" />
       
       {/* Tooltip */}

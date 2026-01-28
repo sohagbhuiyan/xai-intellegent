@@ -116,7 +116,7 @@ export default function Navbar() {
                   whileHover={{ x: "100%" }}
                   transition={{ duration: 0.5 }}
                 />
-                <span className="relative z-10">Get Started</span>
+                <span className="relative cursor-pointer z-10">Get Started</span>
               </Button>
             </motion.div>
 

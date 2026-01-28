@@ -38,6 +38,7 @@ const config: Config = {
         "18": "4.5rem",
         "88": "22rem",
         "128": "32rem",
+        "150": "37.5rem",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",

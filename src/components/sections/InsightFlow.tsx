@@ -188,9 +188,9 @@ export default function InsightFlow() {
   // Parallax effect for background elements
   const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [-50, 50]);
-
+//   <section id="insights" className="section-padding relative">
   return (
-    <section ref={containerRef} className="relative py-32 overflow-hidden bg-[#0a0a0f]">
+    <section id="insights" ref={containerRef} className=" section-padding relative py-32 overflow-hidden bg-[#0a0a0f]">
       {/* Subtle background gradients */}
       <motion.div 
         style={{ y: y1 }}
@@ -241,7 +241,7 @@ export default function InsightFlow() {
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="relative group"
+                  className="relative group cursor-pointer"
                 >
                   {/* Step number indicator */}
                   <div className="relative mb-8">
@@ -346,7 +346,7 @@ export default function InsightFlow() {
             whileTap={{ scale: 0.98 }}
             className="group inline-flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm"
           >
-            <span className="font-light">Explore our methodology</span>
+            <span className="font-light cursor-pointer">Explore our methodology</span>
             <motion.svg
               className="w-4 h-4"
               fill="none"

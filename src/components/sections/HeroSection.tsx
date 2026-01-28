@@ -369,9 +369,9 @@ export default function HeroSection() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
           </span>
-          <span className="text-xs font-medium text-white/70 tracking-wide">
+          {/* <span className="text-xs font-medium text-white/70 tracking-wide">
             AI-POWERED INTELLIGENCE WORKSPACE
-          </span>
+          </span> */}
         </motion.div>
 
         {/* Main Headline - Minimal, impactful */}
@@ -379,7 +379,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          className="text-6xl md:text-7xl lg:text-8xl font-light mb-8 leading-[1.1] tracking-tight"
+          className="text-6xl md:text-6xl lg:text-7xl font-light mb-8 leading-[1.1] tracking-tight"
         >
           <span className="block text-white/40">Raw Data</span>
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white">
@@ -409,7 +409,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.98 }}
             className="group relative px-8 py-4 bg-white text-[#0a0a0f] rounded-lg font-medium overflow-hidden transition-all duration-300"
           >
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center cursor-pointer gap-2">
               Start Transforming
               <motion.svg
                 className="w-4 h-4"
@@ -434,7 +434,7 @@ export default function HeroSection() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="px-8 py-4 border border-white/20 text-white rounded-lg font-medium backdrop-blur-sm hover:bg-white/5 transition-all duration-300"
+            className="px-8 py-4 border cursor-pointer border-white/20 text-white rounded-lg font-medium backdrop-blur-sm hover:bg-white/5 transition-all duration-300"
           >
             View Demo
           </motion.button>

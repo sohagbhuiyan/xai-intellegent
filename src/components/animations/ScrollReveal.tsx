@@ -1,63 +1,3 @@
-// "use client";
-
-// import { motion, useInView } from "framer-motion";
-// import { useRef, ReactNode } from "react";
-// import { cn } from "@/src/lib/utils";
-
-// interface ScrollRevealProps {
-//   children: ReactNode;
-//   className?: string;
-//   delay?: number;
-//   direction?: "up" | "down" | "left" | "right" | "none";
-//   once?: boolean;
-// }
-
-// export default function ScrollReveal({
-//   children,
-//   className,
-//   delay = 0,
-//   direction = "up",
-//   once = true,
-// }: ScrollRevealProps) {
-//   const ref = useRef(null);
-//   const isInView = useInView(ref, { once, margin: "-100px" });
-
-//   const directions = {
-//     up: { y: 40, x: 0 },
-//     down: { y: -40, x: 0 },
-//     left: { x: 40, y: 0 },
-//     right: { x: -40, y: 0 },
-//     none: { x: 0, y: 0 },
-//   };
-
-//   const initial = {
-//     opacity: 0,
-//     ...directions[direction],
-//   };
-
-//   const animate = {
-//     opacity: isInView ? 1 : 0,
-//     x: isInView ? 0 : directions[direction].x,
-//     y: isInView ? 0 : directions[direction].y,
-//   };
-
-//   return (
-//     <motion.div
-//       ref={ref}
-//       initial={initial}
-//       animate={animate}
-//       transition={{
-//         duration: 0.6,
-//         delay,
-//         ease: [0.25, 0.1, 0.25, 1],
-//       }}
-//       className={cn(className)}
-//     >
-//       {children}
-//     </motion.div>
-//   );
-// }
-
 "use client";
 
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
@@ -89,11 +29,19 @@ export default function ScrollReveal({
   viewport,
 }: ScrollRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
+  
+  // Build viewport options conditionally to avoid type errors
+  const viewportOptions: any = {
     once,
-    margin: (viewport?.margin || "-80px") as unknown,
     amount: viewport?.amount || 0.3,
-  });
+  };
+  
+  // Only add margin if it's provided
+  if (viewport?.margin) {
+    viewportOptions.margin = viewport.margin;
+  }
+  
+  const isInView = useInView(ref, viewportOptions);
 
   const variants = {
     up: {
@@ -188,7 +136,7 @@ export function StaggerContainer({
   once = true,
 }: StaggerContainerProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: "-100px" as any });
+  const isInView = useInView(ref, { once });
 
   return (
     <motion.div
