@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -185,9 +186,11 @@ export default function Navbar() {
                   transition={{ delay: 0.4 }}
                   className="pt-4"
                 >
-                  <Button variant="primary" size="sm" className="w-full">
-                    Get Started
-                  </Button>
+            <Link href="#">
+              <Button variant="primary" size="sm" className="w-full">
+                Get Started
+              </Button>
+            </Link>
                 </motion.div>
               </div>
             </motion.div>
