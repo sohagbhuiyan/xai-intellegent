@@ -333,6 +333,8 @@ export default function InsightFlow() {
             </span>
           </h2>
           
+
+          
           <p className="text-base lg:text-lg text-white/60 max-w-3xl mx-auto">
             Transform data into insights through our intelligent {totalCards}-stage process
           </p>
